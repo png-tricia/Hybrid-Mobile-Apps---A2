@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Messaging System
+    </ion-title>Howl/Sohpie
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Howl/Sohpie</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Messages</ion-card-title>
+      <ion-label>{{messages}}</ion-label>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Members Joined</ion-card-title>
+      <ion-label>{{members}}</ion-label>
+    </ion-card-header>
+  </ion-card><br>
+
+  <!-- PERSON #1: Howl Jenkins -->
+  <ion-button name="p1Button" shape="round" (click)='transformHowl()' *ngIf="hideButtonHowl">Join Conversation:
+    Howl</ion-button>
+  <div *ngIf="showInputBoxHowl===true">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Howl: " placeholder="Input message here . . ." [(ngModel)]='HowlMsg'></ion-input>
+        <ion-button (click)='newMessageHowl()'>Enter</ion-button>
+      </ion-item>
+    </ion-list>
+  </div><br>
+
+  <!-- PERSON #2: Sophie Jenkins -->
+  <ion-button name="p1Button" shape="round" (click)='transformSophie()' *ngIf="hideButtonSophie">Join Conversation:
+    Sophie</ion-button>
+  <div *ngIf="showInputBoxSophie===true">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Sophie: " placeholder="Input message here . . ." [(ngModel)]='SophieMsg'></ion-input>
+        <ion-button (click)='newMessageSophie()'>Enter</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Messaging System
+    </ion-title>Patricia
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Patricia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Messages</ion-card-title>
+      <ion-label>{{messages}}</ion-label>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Members Joined</ion-card-title>
+      <ion-label>{{members}}</ion-label>
+    </ion-card-header>
+  </ion-card><br>
+
+  <ion-button name="p1Button" shape="round" (click)='transform()' *ngIf="hideButton">Join Conversation:
+    Patricia</ion-button>
+  <div *ngIf="showInputBox===true">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Patricia: " placeholder="Input message here . . ." [(ngModel)]='myMsg'> </ion-input>
+        <ion-button (click)='newMessage()'>Enter</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
